@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <!-- Import Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.collection-item a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Display the first section by default
+            if (sections.length > 0) {
+                sections[0].style.display = 'block';
+            }
+        });
+    </script>
+    <style type="text/css">
+         .profile-container {
+                            display: flex;
+                            align-items: center;
+                            padding: 40px;
+                            background-color: #f9f9f9;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        }
+                        .profile-picture {
+                            font-size: 150px;
+                            color: #757575;
+                            margin-right: 20px;
+                        }
+                        .biodata {
+                            font-size: 16px;
+                            color: #333;
+                        }
+                        .biodata h6 {
+                            margin: 0 0 10px 0;
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#!"><i class="material-icons">search</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <style>
+        .card {
+            border-radius: 15px;
+            padding: 10%;
+        }
+        .content-section {
+            display: none;
+        }
+    </style>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Navigation Menu -->
+            <div class="col s2">
+                <ul class="card collection">
+                    <li class="collection-item"><a href="#profile">Profile</a></li>
+                    <li class="collection-item"><a href="#education">Edukasi</a></li>
+                    <li class="collection-item"><a href="#work-experience">Pengalaman Kerja</a></li>
+                </ul>
+            </div>
+            <!-- Right Content Area -->
+            <div class="card col s10">
+                <div class="container-fluid">
+                    <div id="profile" class="content-section" style="padding: 2%;">
+                        <h2 class="center">Profile</h2>
+                        <div class="profile-container">
+                            <div class="row">
+                                <div class="col s3" style="padding: 5%;">
+                                    <img src="image.png" alt="" class="responsive-img"> 
+                                </div>
+                                <div class="col s1">&nbsp;</div>
+                                <div class="col s8" style="padding: 5%;">
+                                    <div class="biodata">
+                                        <table class="striped" style="width: 100%;">
+                                            <tr>
+                                                <td><strong>Nama</strong></td>
+                                                <td>:</td>
+                                                <td>John Doe</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Umur</strong></td>
+                                                <td>:</td>
+                                                <td>30 tahun</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Alamat</strong></td>
+                                                <td>:</td>
+                                                <td>Jl. Kebon Jeruk No. 123, Jakarta</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Email</strong></td>
+                                                <td>:</td>
+                                                <td>john.doe@example.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Telepon</strong></td>
+                                                <td>:</td>
+                                                <td>+62 812 3456 7890</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="education" class="content-section" style="padding: 2%;">
+                        <h2 class="center">Edukasi</h2>
+                        <div class="education-container">
+                            <table class="striped" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Tahun</th>
+                                        <th>Institusi</th>
+                                        <th>Jurusan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2010 - 2014</td>
+                                        <td>Universitas Indonesia</td>
+                                        <td>Teknik Informatika</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2007 - 2010</td>
+                                        <td>SMA Negeri 1 Jakarta</td>
+                                        <td>IPA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2004 - 2007</td>
+                                        <td>SMP Negeri 1 Jakarta</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="work-experience" class="content-section" style="padding: 2%;">
+                        <h2 class="center">Pengalaman Kerja</h2>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <span class="card-title">PT. Maju Jaya</span>
+                                        <p><strong>Periode:</strong> Jan 2018 - Des 2020</p>
+                                        <p><strong>Posisi:</strong> Software Engineer</p>
+                                        <p><strong>Status Karyawan:</strong> Karyawan Tetap</p>
+                                        <p><strong>Kisaran Gaji:</strong> Rp 10.000.000 - Rp 15.000.000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <span class="card-title">PT. Sukses Selalu</span>
+                                        <p><strong>Periode:</strong> Jan 2016 - Des 2017</p>
+                                        <p><strong>Posisi:</strong> Junior Developer</p>
+                                        <p><strong>Status Karyawan:</strong> Karyawan Kontrak</p>
+                                        <p><strong>Kisaran Gaji:</strong> Rp 7.000.000 - Rp 9.000.000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
